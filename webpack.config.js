@@ -8,7 +8,7 @@ module.exports = {
   output: {
     filename: 'fquery.js',
     path: path.join(__dirname, 'dist'),
-    library: 'fQuery',
+    // library: 'fQuery'
     libraryTarget: 'window'
   },
 
@@ -19,5 +19,9 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
+  },
+
+  resolve: {
+    modules: ['./src', './node_modules']
   }
 }

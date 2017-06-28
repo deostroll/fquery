@@ -4,29 +4,27 @@ let regex = {
   double: /<(.*)><\/(.*)>/m
 }
 
-const isSingleType = (str) => regex.single.test(str)
-const isDoubleType = (str) => regex.double.test(str)
+let isSingleType = (str) => regex.single.test(str)
+let isDoubleType = (str) => regex.double.test(str)
 
-const isValidDoubleType = (str) => {
+let isValidDoubleType = (str) => {
   res = regex.double.exec(str)
   return {
     valid: res[1] === res[2],
     regexResult: res
   }
 }
-const extract = (str) => isSingleType(str) ?
-  regex.single.exec(str)[1]
-    :
-  ((a) => {
-  let {valid, regexResult } = isValidDoubleType(a)
-  if (valid) {
-    return regexResult[1]
+
+const extract = function(str) {
+  if (isSingleType(str)) {
+    return regex.single.exec(str)[1]
   }
   else {
-    return null
+    let { valid, regexResult } = isValidDoubleType(str)
+    return valid ? regexResult[1] : null
   }
-})(str)
-
-export default {
-  extract: extract
 }
+
+let obj = { extract }
+
+export default obj

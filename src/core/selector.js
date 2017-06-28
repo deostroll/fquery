@@ -3,19 +3,19 @@ import { extract } from "core/util/html-regex"
 
 let document = window.document
 
-let elementRegexes = {
-  singleTag: /<(.*)\/>/m,
-  doubleTag: /<(.*)></(.*)>/m,
-  isSingle: (str) => {
-    single
-  }
-}
+// let elementRegexes = {
+//   singleTag: /<(.*)\/>/m,
+//   doubleTag: /<(.*)></(.*)>/m,
+//   isSingle: (str) => {
+//     single
+//   }
+// }
 
 export default function Selector(selector, context) {
   this.nodes = []
 
-  if (typeof selector === 'string' && selector[0] = '<') {
-    var node = createNode(extract(selector))
+  if (typeof selector === 'string' && selector[0] === '<') {
+    let node = createNode(extract(selector))
     this.nodes = [node]
   }
   else if (typeof selector === 'object' && selector instanceof Selector) {

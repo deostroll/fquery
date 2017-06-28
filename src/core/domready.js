@@ -20,5 +20,6 @@ export default function domReady(fn) {
       }
     })
 
+    handlers.push(fn)
   }
 }

@@ -2,6 +2,7 @@
 import window from "core/window"
 import domReady from "core/domready"
 import Selector from "core/selector"
+import * as plugins from "core/standard-plugins"
 
 import mergeArray from "core/util/static-helpers/merge-array"
 

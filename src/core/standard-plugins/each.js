@@ -1,4 +1,4 @@
-import fQuery from "core"
+import Selector from "core/selector"
 
 function each(fn) {
   let nodes = this.nodes
@@ -6,4 +6,4 @@ function each(fn) {
   return this
 }
 
-fQuery.fn.each = each
+Selector.prototype.each = each
