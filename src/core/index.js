@@ -1,7 +1,9 @@
 
-import window from "./window"
-import domReady from "./domready"
-import Selector from "./selector"
+import window from "core/window"
+import domReady from "core/domready"
+import Selector from "core/selector"
+
+import mergeArray from "core/util/static-helpers/merge-array"
 
 export function fQuery(selector, context) {
 
@@ -15,3 +17,4 @@ export function fQuery(selector, context) {
 }
 
 fQuery.fn = Selector.prototype
+fQuery.merge = mergeArray
